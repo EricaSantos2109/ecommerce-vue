@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Clientes from '../views/Clientes.vue'
+import CadastroCliente from '../views/CadastroCliente.vue'
 
 Vue.use(VueRouter)
 
@@ -14,6 +16,16 @@ Vue.use(VueRouter)
     path: '/about',
     name: 'About',
     component: () => import('../views/About.vue')
+  },
+   {
+    path: '/clientes',
+    name: 'Clientes',
+    component: Clientes
+  },
+   {
+    path: '/cadastro-cliente',
+    name: 'Cadastro',
+    component: CadastroCliente
   }
 ]
 
