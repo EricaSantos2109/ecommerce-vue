@@ -19,9 +19,9 @@
     export default {
         name: 'LinhaPedido',
         props: {
-            id: String,
+            id: Number,
             nome: String,
-            valor: String,
+            valor: Number,
             cliente: String
         }
     }

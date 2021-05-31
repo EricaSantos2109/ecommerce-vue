@@ -18,7 +18,7 @@
         props: {
             nome: String,
             email: String,
-            idade: String
+            idade: Number
         }
     }
 </script>

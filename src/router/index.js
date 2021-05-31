@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Clientes from '../views/Clientes.vue'
-import Pedidos from '../views/Pedidos.vue'
+//import Home from '../views/Home.vue'
+//import Clientes from '../views/Clientes.vue'
+//import Pedidos from '../views/Pedidos.vue'
 import Login from '../views/Login.vue'
-import CadastroCliente from '../views/CadastroCliente.vue'
+//import CadastroCliente from '../views/CadastroCliente.vue'
 import store from '../store'
 
 
@@ -14,7 +14,7 @@ const routes = [
     {
         path: '/home',
         name: 'Home',
-        component: Home,
+        component: () => import('../views/Home.vue'),
         redirect: store.state.token == null ? "/": ''
     },
     {
@@ -26,19 +26,19 @@ const routes = [
     {
         path: '/clientes',
         name: 'Clientes',
-        component: Clientes,
+        component: () => import('../views/Clientes.vue'),
         redirect: store.state.token == null ? "/": ''
     },
     {
         path: '/cadastro-cliente',
         name: 'Cadastro',
-        component: CadastroCliente,
+        component: () => import('../views/CadastroCliente.vue'),
         redirect: store.state.token == null ? "/": ''
     },
     {
         path: '/pedidos',
         name: 'Pedidos',
-        component: Pedidos,
+        component: () => import('../views/Pedidos.vue'),
         redirect: store.state.token == null ? "/": ''
     },
     {
