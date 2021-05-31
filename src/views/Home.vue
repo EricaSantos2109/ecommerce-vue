@@ -13,6 +13,9 @@
         name: 'Home',
         components: {
 
+        },
+        beforeMount(){
+            console.log(this.$store.state.token);
         }
     }
 </script>

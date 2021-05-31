@@ -5,6 +5,7 @@ import Clientes from '../views/Clientes.vue'
 import Pedidos from '../views/Pedidos.vue'
 import Login from '../views/Login.vue'
 import CadastroCliente from '../views/CadastroCliente.vue'
+import store from '../store'
 
 
 Vue.use(VueRouter)
@@ -13,27 +14,32 @@ const routes = [
     {
         path: '/home',
         name: 'Home',
-        component: Home
+        component: Home,
+        redirect: store.state.token == null ? "/": ''
     },
     {
         path: '/about',
         name: 'About',
-        component: () => import('../views/About.vue')
+        component: () => import('../views/About.vue'),
+        redirect: store.state.token == null ? "/": ''
     },
     {
         path: '/clientes',
         name: 'Clientes',
-        component: Clientes
+        component: Clientes,
+        redirect: store.state.token == null ? "/": ''
     },
     {
         path: '/cadastro-cliente',
         name: 'Cadastro',
-        component: CadastroCliente
+        component: CadastroCliente,
+        redirect: store.state.token == null ? "/": ''
     },
     {
         path: '/pedidos',
         name: 'Pedidos',
-        component: Pedidos
+        component: Pedidos,
+        redirect: store.state.token == null ? "/": ''
     },
     {
         path: '/',
