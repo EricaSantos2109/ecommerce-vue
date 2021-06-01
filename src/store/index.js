@@ -48,9 +48,9 @@ export default new Vuex.Store({
                 })
                 .catch(error => console.log(error));
         },
-        cadastrar(context, { usuario, email, idade, senha }) {
-            axios.post("/usuario", {
-                nome: usuario,
+        cadastrar(context, { nome, email, idade, senha }) {
+            axios.post("/cliente", {
+                nome: nome,
                 email: email,
                 idade: idade,
                 senha: senha

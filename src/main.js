@@ -24,7 +24,7 @@ axios.interceptors.response.use(res => {
     throw error
 });
 
-axios.defaults.baseURL = "https://8080-white-meadowlark-7453t406.ws-us08.gitpod.io/ecommerce/";
+axios.defaults.baseURL = "https://8080-pink-marten-3zsf98ss.ws-us08.gitpod.io/ecommerce";
 
 Vue.config.productionTip = false
 
