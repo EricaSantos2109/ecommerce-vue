@@ -35,6 +35,12 @@ const routes = [
         component: () => import('../views/CadastroCliente.vue'),
         redirect: store.state.token == null ? "/": ''
     },
+     {
+        path: '/cadastro-pedido',
+        name: 'Pedidos',
+        component: () => import('../views/CadastroPedido.vue'),
+        redirect: store.state.token == null ? "/": ''
+    },
     {
         path: '/pedidos',
         name: 'Pedidos',

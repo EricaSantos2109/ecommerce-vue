@@ -15,7 +15,7 @@
 
         },
         beforeMount(){
-            console.log(this.$store.state.token);
+            console.log(this.$store.state.tipo);
         }
     }
 </script>

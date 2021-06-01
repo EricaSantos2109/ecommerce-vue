@@ -29,6 +29,7 @@ export default new Vuex.Store({
       logout(state) {
       state.token = null;
       state.usuario = null;
+      state.tipo = null;
     }
   },
   actions: {
@@ -42,7 +43,7 @@ export default new Vuex.Store({
           console.log(res);
           context.commit('setUsuario', usuario);
           context.commit('setToken', res.data.token);
-          context.commit('tipo', res.data.tipo);
+          context.commit('setTipo', res.data.autorizacao);
           router.push('/home');
         })
         .catch(error => console.log(error));

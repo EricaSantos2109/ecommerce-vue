@@ -1,7 +1,13 @@
-table{
+.table-admin{
     margin-left: auto; 
     margin-right: auto; 
     background: rgb(250, 196, 228);
+}
+
+.table-usuario{
+    margin-left: auto; 
+    margin-right: auto; 
+    background: rgb(19, 129, 219);
 }
 
 td{

@@ -1,5 +1,5 @@
 <template>
-    <table style="width:50%">
+    <table class="table-admin" style="width:50%">
         <tr>
             <th>ID</th>
             <th>Nome</th>

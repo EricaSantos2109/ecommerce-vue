@@ -2,9 +2,10 @@
   <div id="app">
     <div id="nav" v-if="this.$store.state.token != null">
       <router-link to="/home">Home</router-link> |
-      <router-link to="/clientes">Clientes</router-link> |
-      <router-link to="/pedidos">Pedidos</router-link> |
+      <router-link to="/clientes" v-if="this.$store.state.tipo == 'ROLE_ADMIN'">Clientes | </router-link> 
+      <router-link to="/pedidos" v-if="this.$store.state.tipo == 'ROLE_ADMIN'">Pedidos | </router-link>
       <router-link to="/cadastro-cliente">Cadastro de Clientes</router-link> |
+      <router-link to="/cadastro-pedido">Cadastro de Pedido</router-link> |
       <a><p @click="sair">Sair</p></a>
     </div>
     

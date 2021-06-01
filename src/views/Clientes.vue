@@ -1,5 +1,5 @@
 <template>
-    <table style="width:50%">
+    <table class="table-admin" style="width:50%">
         <tr>
             <th>Nome</th>
             <th>Email</th>
@@ -20,7 +20,7 @@
         },
         data() {
             return {
-                clientes: []
+                clientes: [],
             }
         },
         methods: {
@@ -36,6 +36,6 @@
         },
         created() {
             this.atualizar();
-        }
+        } 
     }
 </script>
