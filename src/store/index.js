@@ -17,6 +17,11 @@ export default new Vuex.Store({
         usuario: null,
         tipo: null
     },
+    getters:{
+        getToken(state){
+            return state.token;
+        }
+    },
     mutations: {
         setUsuario(state, usuario) {
             state.usuario = usuario;
@@ -47,27 +52,6 @@ export default new Vuex.Store({
                     router.push('/home');
                 })
                 .catch(error => console.log(error));
-        },
-        cadastrar(context, { nome, email, idade, senha }) {
-            var hd = {'Authorization': 'Bearer ' + this.state.token, 'Content-Type': 'application/json'}
-            var req = {
-                "nome": nome,
-                "email": email,
-                "idade": idade,
-                "senha": senha
-            }
-
-            //console.log(req);
-
-            axios.post("/cliente/", hd, req).then(res => {
-                console.log(res);
-                router.push('/home');
-            }).catch(error => {
-                //if (error.response.status === 409) {
-                //alert(error.response.data.message)
-                console.log(error);
-                //}
-            })
         },
     },
     modules: {
