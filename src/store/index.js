@@ -49,14 +49,19 @@ export default new Vuex.Store({
                 .catch(error => console.log(error));
         },
         cadastrar(context, { nome, email, idade, senha }) {
-            axios.post("/cliente", {
-                nome: nome,
-                email: email,
-                idade: idade,
-                senha: senha
-            }).then(res => {
+            var hd = {'Authorization': 'Bearer ' + this.state.token, 'Content-Type': 'application/json'}
+            var req = {
+                "nome": nome,
+                "email": email,
+                "idade": idade,
+                "senha": senha
+            }
+
+            //console.log(req);
+
+            axios.post("/cliente/", hd, req).then(res => {
                 console.log(res);
-                router.push('/login');
+                router.push('/home');
             }).catch(error => {
                 //if (error.response.status === 409) {
                 //alert(error.response.data.message)

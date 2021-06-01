@@ -66,7 +66,7 @@ export default {
   methods: {
     ...mapActions(["cadastrar"]),
     cadastro() {
-      this.cadastrar({ nome: this.nome, email: this.email, idade: this.idade, senha: this.senha });
+      this.cadastrar('cadastrar' ,{ nome: this.nome, email: this.email, idade: this.idade, senha: this.senha });
     },
   },
 };

@@ -18,13 +18,14 @@ axios.interceptors.response.use(res => {
     if(error.response.status === 403) {
       alert('Não autorizado!')
     } else if (error.response.status === 401) {
-      store.commit('logout')
+       alert('Não autorizado!')
+      //store.commit('logout')
       //router.push('')
     }
     throw error
 });
 
-axios.defaults.baseURL = "https://8080-pink-marten-3zsf98ss.ws-us08.gitpod.io/ecommerce";
+axios.defaults.baseURL = "https://8080-plum-crane-yjh3kea5.ws-us08.gitpod.io/ecommerce";
 
 Vue.config.productionTip = false
 
