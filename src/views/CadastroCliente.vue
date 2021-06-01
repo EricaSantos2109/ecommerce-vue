@@ -1,37 +1,73 @@
 <template>
-    <form>
-        <h2>Cadastro de Cliente</h2>
-        <input class="entrada" type="text" placeholder="Nome" required v-model="nome">
-        <input class="entrada" type="text" placeholder="Email" required v-model="email">
-        <input class="entrada" type="text" placeholder="Idade" required v-model="idade">
-        <input class="entrada" type="password" placeholder="Senha" required v-model="senha">
-        <input class="enviar" type="submit" @click="cadastro" value="Enviar">
+    <form @submit.prevent="cadastrar">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input
+          type="text"
+          id="nome"
+          class="form-control"
+          required
+          autofocus
+          v-model="nome"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          id="email"
+          class="form-control"
+          required
+          autofocus
+          v-model="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="idade">Idade</label>
+        <input
+          type="text"
+          id="idade"
+          class="form-control"
+          required
+          autofocus
+          v-model="idade"
+        />
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input
+          type="text"
+          id="senha"
+          class="form-control"
+          required
+          autofocus
+          v-model="senha"
+        />
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Salvar
+      </button>
     </form>
 
 </template>
 
 <script>
-    import axios from "axios";
-    export default {
-        name: "cadastrar",
-        data() {
-            return {
-                nome: "",
-                email: "",
-                idade: "",
-                senha: "",
-            };
-        },
-        methods: {
-            cadastro() {
-               JSON.stringify({
-                    nome: this.nome,
-                    email: this.email,
-                    idade: this.idade,
-                    senha: this.senha
-                });
-            }
-        }
-    }
-
+import { mapActions } from "vuex";
+export default {
+  name: "cadastrar",
+  data() {
+    return {
+      nome: "",
+      email: "",
+      idade: "",
+      senha: "",
+    };
+  },
+  methods: {
+    ...mapActions(["cadastrar"]),
+    cadastro() {
+      this.cadastrar({ nome: this.nome, email: this.email, idade: this.idade, senha: this.senha });
+    },
+  },
+};
 </script>

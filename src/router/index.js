@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 //import Clientes from '../views/Clientes.vue'
 //import Pedidos from '../views/Pedidos.vue'
 import Login from '../views/Login.vue'
-//import CadastroCliente from '../views/CadastroCliente.vue'
+import CadastroCliente from '../views/CadastroCliente.vue'
 import store from '../store'
 
 
@@ -32,12 +32,13 @@ const routes = [
     {
         path: '/cadastro-cliente',
         name: 'Cadastro',
-        component: () => import('../views/CadastroCliente.vue'),
+        component: CadastroCliente,
+        //component: () => import('../views/CadastroCliente.vue'),
         redirect: store.state.token == null ? "/": ''
     },
      {
         path: '/cadastro-pedido',
-        name: 'Pedidos',
+        name: 'Cadastro Pedidos',
         component: () => import('../views/CadastroPedido.vue'),
         redirect: store.state.token == null ? "/": ''
     },
